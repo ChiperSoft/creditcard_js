@@ -1,7 +1,6 @@
-This was extracted from http://letsfreckle.com.
+Originally based on creditcard.js for underscore.js, written by Thomas Fuchs.
 
-This version requires underscore.js. It was ported from the
-version that uses the Prototype JavaScript framework.
+This version requires no third-party libraries.
 
 CreditCard.validate('1111 2222 3333 4444') -> true/false
   the given string is automatically stripped of whitespace, so it can be
