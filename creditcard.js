@@ -44,10 +44,10 @@ var CreditCard = {
     Amex: /^3[47][0-9]{13}$/,
     Discover: /^6(?:011|5[0-9]{2})[0-9]{12}$/
   },
-  TEST_NUMBERS: '378282246310005 371449635398431 378734493671000 '+
+  TEST_NUMBERS: ' 378282246310005 371449635398431 378734493671000 '+
     '30569309025904 38520000023237 6011111111111117 '+
     '6011000990139424 5555555555554444 5105105105105100 '+
-    '4111111111111111 4012888888881881 4222222222222',
+    '4111111111111111 4012888888881881 4222222222222 ',
   validate: function(number){
     return CreditCard.verifyLuhn10(number)
       && !!CreditCard.type(number)
@@ -59,7 +59,7 @@ var CreditCard = {
     return !(d%10)
   },
   isTestNumber: function(number){
-    return CreditCard.TEST_NUMBERS.indexOf(CreditCard.strip(number)) > -1
+    return CreditCard.TEST_NUMBERS.indexOf(' '+CreditCard.strip(number)+' ') !== -1
   },
   strip: function(number) {
     return String(number).replace(/\s/g,'')
