@@ -72,7 +72,9 @@ var CreditCard = {
 
 ;(function(){
   for(var card in CreditCard.CARDS)
-    CreditCard['is'+card] = _.bind(function(card, number){
-      return CreditCard.CARDS[card].test(CreditCard.strip(number))
-    }, CreditCard, card)
+    CreditCard['is'+card] = (function (card) {
+      return function (number) {
+        return CreditCard.CARDS[card].test(CreditCard.strip(number))
+      }
+	})(card);
 })()
