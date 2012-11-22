@@ -1,40 +1,8 @@
-// Copyright (c) 2008-2012 Thomas Fuchs
-// http://mir.aculo.us/
-//
-// Permission is hereby granted, free of charge, to any person obtaining
-// a copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to
-// the following conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-// creditcard.js requires underscore.js
-//
-// CreditCard.validate('1111 2222 3333 4444') -> true/false
-//   the given string is automatically stripped of whitespace, so it can be
-//   plugged directly into form validations
-//
-// The following things are tested:
-//   1. does the luhn validation code add up? (see http://en.wikipedia.org/wiki/Luhn_algorithm)
-//   2. does the number range and length seem right? (see http://en.wikipedia.org/wiki/Bank_card_number)
-//   3. is it one of several well-known test numbers?
-//
-// Card identification via CreditCard.type(string) -> "Visa", "MasterCard", etc.
-// Also, CreditCard.isVisa(string) -> true/false (works for all cards given in CARDS)
-//
-// Be sure to adapt the CARDS array to the credit cards you accept.
+// Creditcard.js, a quick library for validating and identifying creditcard numbers
+// https://github.com/ChiperSoft/creditcard_js
+// 
+// Copyright (c) 2012-2013 Jarvis Badgley - http://chipersoft.com/
+// Copyright (c) 2008-2012 Thomas Fuchs - http://mir.aculo.us/
 
 var CreditCard = {
   CARDS: {
