@@ -62,7 +62,7 @@ var CreditCard = {
     return CreditCard.TEST_NUMBERS.indexOf(CreditCard.strip(number)) > -1
   },
   strip: function(number) {
-    return number.replace(/\s/g,'')
+    return String(number).replace(/\s/g,'')
   },
   type: function(number) {
     for(var card in CreditCard.CARDS)
