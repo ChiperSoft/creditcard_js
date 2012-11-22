@@ -53,12 +53,10 @@ var CreditCard = {
       && !!CreditCard.type(number)
       && !CreditCard.isTestNumber(number)
   },
-  verifyLuhn10: function(number){
-    return _(CreditCard.strip(number).split('').reverse())
-      .reduce(function(a,n,index){
-        return a + _((+n * [1,2][index%2]).toString().split(''))
-          .reduce(function(b,o){ return b + +o }, 0) 
-      }, 0) % 10 == 0
+  verifyLuhn10: function(a,b,c,d,e) {
+    for(d = +a[b = a.length-1], e=0; b--;)
+      c = +a[b], d += ++e % 2 ? 2 * c % 10 + (c > 4) : c;
+    return !(d%10)
   },
   isTestNumber: function(number){
     return CreditCard.TEST_NUMBERS.indexOf(CreditCard.strip(number)) > -1
